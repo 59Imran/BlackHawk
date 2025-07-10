@@ -383,6 +383,32 @@
             max-height: 50px; 
             width: auto; 
         }
+		 /* Custom hover effect for cards */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+		
+        /* Custom button hover */
+        .btn-primary:hover {
+            background-position: 100% 0;
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-image: linear-gradient(to right, #6366f1 0%, #4f46e5 51%, #6366f1 100%);
+            background-size: 200% auto;
+            transition: 0.5s;
+        }
+        .btn-secondary {
+            transition: 0.3s;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -396,10 +422,10 @@
             </a>
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Home</a>
-                <a href="#destination" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Destinations</a>
                 <a href="#packages" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Packages</a>
                 <a href="#hotel" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Black Hawk Rooms</a>
                 <a href="#services" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Services</a>
+				<a href="#destination" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Destinations</a>
                 <a href="#contact" class="text-lg text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
             </div>
             <!-- Mobile Menu Button -->
@@ -410,10 +436,10 @@
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="mobile-menu-overlay md:hidden">
             <a href="#home" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Home</a>
-            <a href="#destination" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Destinations</a>
             <a href="#packages" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Packages</a>
             <a href="#hotel" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Black Hawk Rooms</a>
             <a href="#services" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Services</a>
+			<a href="#destination" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Destinations</a>
             <a href="#contact" class="block py-3 text-gray-700 hover:text-blue-600 text-xl" onclick="toggleMobileMenu()">Contact</a>
             <button class="absolute top-6 right-6 text-gray-700 text-4xl focus:outline-none" onclick="toggleMobileMenu()">
                 <i class="fas fa-times"></i>
@@ -428,7 +454,7 @@
                 <h1 class="hero-title"></h1>
                 <p class="hero-subtitle"></p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                    <a href="#destination" class="hero-button">
+                    <a href="#aboutus" class="hero-button">
                         Explore Now
                     </a>
                 </div>
@@ -438,10 +464,296 @@
             </a>
         </section>
 
-        <!-- Destination Section - Continuous Horizontal Scroll -->
+        <!-- About Us and Why you choose us-->
+		<section id="aboutus" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-100 to-green-100 min-h-screen flex items-center justify-center">
+			<div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 ease-in-out hover:scale-[1.005]">
+				<!-- Content Section - now full width -->
+				<div class="p-8 lg:p-12 xl:p-16">
+					<h2 class="text-5xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight text-center">
+						Our Story: Unveiling the Soul of Kashmir
+					</h2>
+					<h3 class="text-2xl font-semibold text-gray-700 mb-8 text-center">
+						Crafting Unforgettable Journeys and Stays in Paradise
+					</h3>
+					<p class="text-xl text-gray-700 mb-6 leading-relaxed text-center max-w-4xl mx-auto">
+						Welcome to <span class="font-bold text-indigo-700">Black Hawk kashmir</span>, your premier gateway to the unparalleled beauty and rich cultural tapestry of Kashmir. Born from a profound connection to our homeland, we are dedicated to crafting extraordinary and authentic travel experiences.
+					</p>
+					<p class="text-lg text-gray-600 mb-8 leading-relaxed border-l-4 border-indigo-500 pl-4 italic max-w-4xl mx-auto text-center">
+						"Our mission is to share the enchanting spirit of Kashmir with the world, offering journeys that are not just trips, but transformative experiences, deeply rooted in local culture and unparalleled hospitality."
+					</p>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-5xl mx-auto">
+						<!-- Travel Agency Highlight -->
+						<div class="bg-blue-50 p-7 rounded-2xl shadow-lg border border-blue-200 card-hover-effect">
+							<div class="flex items-center mb-4">
+								<i class="fas fa-plane-departure text-3xl text-indigo-600 mr-4"></i>
+								<h3 class="text-2xl font-bold text-gray-900">Your Journey, Our Expertise</h3>
+							</div>
+							<p class="text-gray-700 leading-relaxed">
+								From mesmerizing Shikara rides on Dal Lake to exhilarating treks through alpine meadows, we meticulously curate bespoke tours. Every detail is handled, allowing you to fully immerse yourself in Kashmir's magic.
+							</p>
+						</div>
+
+						<!-- Hotel Highlight -->
+						<div class="bg-green-50 p-7 rounded-2xl shadow-lg border border-green-200 card-hover-effect">
+							<div class="flex items-center mb-4">
+								<i class="fas fa-hotel text-3xl text-green-600 mr-4"></i>
+								<h3 class="text-2xl font-bold text-gray-900">Our Home, Your Comfort</h3>
+							</div>
+							<p class="text-gray-700 leading-relaxed">
+								Our exclusive <span class="font-bold text-green-800">"Black Hawk Rooms" Hotel</span> offers a sanctuary of comfort and genuine Kashmiri hospitality. Nestled in scenic tranquility, it's your perfect haven after a day of exploration.
+							</p>
+						</div>
+					</div>
+
+					<!-- Why Choose Us Section -->
+					<h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 pb-2 border-gray-200 text-center">Why Choose Us?</h3>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+						<div class="flex items-start">
+							<i class="fas fa-map-marked-alt text-2xl text-purple-600 mr-4 mt-1"></i>
+							<div>
+								<h4 class="font-semibold text-xl text-gray-800">Local Expertise</h4>
+								<p class="text-gray-600">Deep-rooted knowledge of Kashmir ensures authentic experiences.</p>
+							</div>
+						</div>
+						<div class="flex items-start">
+							<i class="fas fa-handshake text-2xl text-purple-600 mr-4 mt-1"></i>
+							<div>
+								<h4 class="font-semibold text-xl text-gray-800">Personalized Service</h4>
+								<p class="text-gray-600">Tailored itineraries to match your unique travel desires.</p>
+							</div>
+						</div>
+						<div class="flex items-start">
+							<i class="fas fa-leaf text-2xl text-purple-600 mr-4 mt-1"></i>
+							<div>
+								<h4 class="font-semibold text-xl text-gray-800">Sustainable Tourism</h4>
+								<p class="text-gray-600">Committed to preserving Kashmir's natural beauty and culture.</p>
+							</div>
+						</div>
+						<div class="flex items-start">
+							<i class="fas fa-smile text-2xl text-purple-600 mr-4 mt-1"></i>
+							<div>
+								<h4 class="font-semibold text-xl text-gray-800">Unmatched Hospitality</h4>
+								<p class="text-gray-600">Experience the warmth of Kashmiri welcome at every step.</p>
+							</div>
+						</div>
+					</div>
+
+					<p class="text-lg text-gray-700 leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+						Join us to experience Kashmir not just as a destination, but as a feeling – a journey for your soul. We eagerly await the opportunity to welcome you to our cherished home.
+					</p>
+
+					<div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+						<a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-center">
+							Call us for Bespoke Tours
+						</a>
+						<a href="#hotel" class="inline-block btn-secondary bg-transparent border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-md text-center">
+							Book Your Stay at Black Hawk Rooms
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+        <!-- Special Packages Section - Now static (no horizontal scroll) -->
+        <section id="packages" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">Our Special Packages</h2>
+                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">Explore our curated packages designed to offer you the best of Kashmir, from adventurous treks to luxurious getaways.</p>
+                <div id="packages-carousel" class="carousel-outer-wrapper mt-10">
+                    <div class="carousel-inner-wrapper">
+                        <!-- Placeholder package cards (no longer duplicated for looping) -->
+                        <div class="carousel-item">
+                            <img src="Images/package1.jpg" alt="Package 1 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Deluxe Winter Escape</h3>
+                                <p class="text-gray-600 text-sm mb-4">Experience luxury in snow-covered landscapes with premium services.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>5 Nights Stay</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Transfer</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Skiing Included</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Images/package2.jpg" alt="Package 2 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Adventure Trek Package</h3>
+                                <p class="text-gray-600 text-sm mb-4">Thrilling treks to alpine lakes and hidden valleys, guided tours.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>7 Days Trek</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Expert Guides</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Camping Gear</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Images/package3.jpg" alt="Package 3 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Family Fun Vacation</h3>
+                                <p class="text-gray-600 text-sm mb-4">A perfect family getaway with activities for all ages.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Child-Friendly</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Sightseeing</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Special Meals</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Images/package4.jpg" alt="Package 4 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Immersion</h3>
+                                <p class="text-gray-600 text-sm mb-4">Explore local traditions, cuisine, and heritage sites.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Local Tours</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cooking Class</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Handicraft Visit</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <!-- New Package Card 5 -->
+                        <div class="carousel-item">
+                            <img src="Images/package5.png" alt="Package 5 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Snow Adventure Retreat</h3>
+                                <p class="text-gray-600 text-sm mb-4">A thrilling trip designed for snow sports enthusiasts. Enjoy activities like snowshoeing and snowboarding.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Ski Resort Access</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Equipment Rental</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cozy Cabin Stays</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <!-- New Package Card 6 -->
+                        <div class="carousel-item">
+                            <img src="Images/package6.jpg" alt="Package 6 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Romantic Winter Getaway</h3>
+                                <p class="text-gray-600 text-sm mb-4">Perfect for couples seeking a serene and romantic escape amidst snowy landscapes. Enjoy intimate experiences.</p>
+                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Romantic Dinners</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Tours</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Fireplace Suites</li>
+                                </ul>
+                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Hotel Section -->
+        <section id="hotel" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">Our Exclusive Hotel: Black Hawk Rooms</h2>
+                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">Experience unparalleled comfort and luxury in our hand-picked accommodations, designed to be your perfect home away from home.</p>
+                <div class="flex flex-col lg:flex-row items-start gap-10 bg-blue-50 rounded-xl shadow-lg p-8 mt-10 animate-slide-in-section">
+                    <div class="lg:w-1/2 overflow-hidden rounded-lg shadow-xl hotel-image-carousel-container">
+                        <div class="hotel-image-carousel-wrapper">
+                            <!-- Placeholder images for hotel carousel -->
+                            <img src="Images/hotel1.jpg" alt="Hotel Exterior Placeholder">
+                            <img src="Images/hotel2.jpg" alt="Hotel Lobby Placeholder">
+                            <img src="Images/hotel3.jpg" alt="Hotel Room Placeholder">
+                            <img src="Images/hotel4.jpg" alt="Hotel Dining Placeholder">
+                            <img src="Images/hotel5.jpg" alt="Hotel View Placeholder">
+                            <!-- Duplicate images for seamless loop -->
+                            <img src="Images/hotel1.jpg" alt="Hotel Exterior Placeholder Duplicate">
+                            <img src="Images/hotel2.jpg" alt="Hotel Lobby Placeholder Duplicate">
+                            <img src="Images/hotel3.jpg" alt="Hotel Room Placeholder Duplicate">
+                            <img src="Images/hotel4.jpg" alt="Hotel Dining Placeholder Duplicate">
+                            <img src="Images/hotel5.jpg" alt="Hotel View Placeholder Duplicate">
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h3 class="text-3xl font-semibold text-indigo-800 mb-4">Experience Unmatched Comfort</h3>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            Discover a comfortable and inviting stay at our exclusive hotel. We provide exceptional amenities and service to make your visit memorable.
+                        </p>
+                        <ul class="text-gray-700 text-lg space-y-2 mb-8 text-center lg:text-left">
+                            <li class="flex items-center justify-center lg:justify-start">
+                                <i class="fas fa-star text-yellow-500 mr-3"></i>Quality Accommodations
+                            </li>
+                            <li class="flex items-center justify-center lg:justify-start">
+                                <i class="fas fa-wifi text-blue-500 mr-3"></i>Wi-Fi Available
+                            </li>
+                            <li class="flex items-center justify-center lg:justify-start">
+                                <i class="fas fa-utensils text-orange-500 mr-3"></i>On-site Dining Options
+                            </li>
+                        </ul>
+                        <a href="tel:+91 7006215055" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                            Inquire About Stays
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services Section - Slide-in on scroll -->
+        <section id="services" class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">Our Comprehensive Services</h2>
+                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">
+                    We offer a range of services to ensure every aspect of your trip is seamless and enjoyable, from planning to execution.
+                </p>
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 animate-slide-in-section">
+                    <!-- Service Card 1: Flight Tickets -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
+                        <div class="p-6 text-center">
+                            <i class="fas fa-plane-departure text-6xl text-blue-600 mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Flight Tickets</h3>
+                            <p class="text-gray-600 mb-6">We assist with booking flights for your convenience, ensuring the best prices.</p>
+                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
+                                Inquire
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Card 2: Stay in Kashmir -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
+                        <div class="p-6 text-center">
+                            <i class="fas fa-hotel text-6xl text-purple-600 mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Comfortable Stay</h3>
+                            <p class="text-gray-600 mb-6">Arrangements for comfortable accommodations tailored to your preferences.</p>
+                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
+                                Inquire
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Card 3: Travel in Kashmir -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
+                        <div class="p-6 text-center">
+                            <i class="fas fa-car-alt text-6xl text-teal-600 mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Local Travel</h3>
+                            <p class="text-gray-600 mb-6">Seamless local transportation services to explore every corner.</p>
+                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
+                                Inquire
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<!-- Destination Section - Continuous Horizontal Scroll -->
         <section id="destination" class="bg-white py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-center">Explore Our Destinations</h2>
+                <h2 class="text-center">Top Destinations</h2>
                 <p class="text-center text-xl text-section-description max-w-3xl mx-auto">Discover the most enchanting places for your perfect winter escape, each offering unique experiences and breathtaking views.</p>
                 <div id="destination-carousel" class="carousel-outer-wrapper mt-10">
                     <div class="carousel-inner-wrapper">
@@ -608,208 +920,14 @@
             </div>
         </section>
 
-        <!-- Special Packages Section - Now static (no horizontal scroll) -->
-        <section id="packages" class="bg-gray-100 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-center">Our Special Packages</h2>
-                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">Explore our curated packages designed to offer you the best of Kashmir, from adventurous treks to luxurious getaways.</p>
-                <div id="packages-carousel" class="carousel-outer-wrapper mt-10">
-                    <div class="carousel-inner-wrapper">
-                        <!-- Placeholder package cards (no longer duplicated for looping) -->
-                        <div class="carousel-item">
-                            <img src="Images/package1.jpg" alt="Package 1 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Deluxe Winter Escape</h3>
-                                <p class="text-gray-600 text-sm mb-4">Experience luxury in snow-covered landscapes with premium services.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>5 Nights Stay</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Transfer</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Skiing Included</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Images/package2.jpg" alt="Package 2 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Adventure Trek Package</h3>
-                                <p class="text-gray-600 text-sm mb-4">Thrilling treks to alpine lakes and hidden valleys, guided tours.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>7 Days Trek</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Expert Guides</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Camping Gear</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Images/package3.jpg" alt="Package 3 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Family Fun Vacation</h3>
-                                <p class="text-gray-600 text-sm mb-4">A perfect family getaway with activities for all ages.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Child-Friendly</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Sightseeing</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Special Meals</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Images/package4.jpg" alt="Package 4 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Immersion</h3>
-                                <p class="text-gray-600 text-sm mb-4">Explore local traditions, cuisine, and heritage sites.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Local Tours</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cooking Class</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Handicraft Visit</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                        <!-- New Package Card 5 -->
-                        <div class="carousel-item">
-                            <img src="Images/package5.png" alt="Package 5 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Snow Adventure Retreat</h3>
-                                <p class="text-gray-600 text-sm mb-4">A thrilling trip designed for snow sports enthusiasts. Enjoy activities like snowshoeing and snowboarding.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Ski Resort Access</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Equipment Rental</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cozy Cabin Stays</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                        <!-- New Package Card 6 -->
-                        <div class="carousel-item">
-                            <img src="Images/package6.jpg" alt="Package 6 Placeholder" class="w-full h-56 object-cover rounded-t-xl">
-                            <div class="p-6 text-center">
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Romantic Winter Getaway</h3>
-                                <p class="text-gray-600 text-sm mb-4">Perfect for couples seeking a serene and romantic escape amidst snowy landscapes. Enjoy intimate experiences.</p>
-                                <ul class="text-gray-700 text-xs mb-4 space-y-1 text-left mx-auto max-w-max">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Romantic Dinners</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Tours</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Fireplace Suites</li>
-                                </ul>
-                                <a href="#contact" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out text-center block">
-                                    Book Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Hotel Section -->
-        <section id="hotel" class="bg-white py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-center">Our Exclusive Hotel: Black Hawk Rooms</h2>
-                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">Experience unparalleled comfort and luxury in our hand-picked accommodations, designed to be your perfect home away from home.</p>
-                <div class="flex flex-col lg:flex-row items-start gap-10 bg-blue-50 rounded-xl shadow-lg p-8 mt-10 animate-slide-in-section">
-                    <div class="lg:w-1/2 overflow-hidden rounded-lg shadow-xl hotel-image-carousel-container">
-                        <div class="hotel-image-carousel-wrapper">
-                            <!-- Placeholder images for hotel carousel -->
-                            <img src="Images/hotel1.jpg" alt="Hotel Exterior Placeholder">
-                            <img src="Images/hotel2.jpg" alt="Hotel Lobby Placeholder">
-                            <img src="Images/hotel3.jpg" alt="Hotel Room Placeholder">
-                            <img src="Images/hotel4.jpg" alt="Hotel Dining Placeholder">
-                            <img src="Images/hotel5.jpg" alt="Hotel View Placeholder">
-                            <!-- Duplicate images for seamless loop -->
-                            <img src="Images/hotel1.jpg" alt="Hotel Exterior Placeholder Duplicate">
-                            <img src="Images/hotel2.jpg" alt="Hotel Lobby Placeholder Duplicate">
-                            <img src="Images/hotel3.jpg" alt="Hotel Room Placeholder Duplicate">
-                            <img src="Images/hotel4.jpg" alt="Hotel Dining Placeholder Duplicate">
-                            <img src="Images/hotel5.jpg" alt="Hotel View Placeholder Duplicate">
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-semibold text-indigo-800 mb-4">Experience Unmatched Comfort</h3>
-                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
-                            Discover a comfortable and inviting stay at our exclusive hotel. We provide exceptional amenities and service to make your visit memorable.
-                        </p>
-                        <ul class="text-gray-700 text-lg space-y-2 mb-8 text-center lg:text-left">
-                            <li class="flex items-center justify-center lg:justify-start">
-                                <i class="fas fa-star text-yellow-500 mr-3"></i>Quality Accommodations
-                            </li>
-                            <li class="flex items-center justify-center lg:justify-start">
-                                <i class="fas fa-wifi text-blue-500 mr-3"></i>Wi-Fi Available
-                            </li>
-                            <li class="flex items-center justify-center lg:justify-start">
-                                <i class="fas fa-utensils text-orange-500 mr-3"></i>On-site Dining Options
-                            </li>
-                        </ul>
-                        <a href="#contact" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                            Inquire About Stays
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Services Section - Slide-in on scroll -->
-        <section id="services" class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-center">Our Comprehensive Services</h2>
-                <p class="text-center text-xl text-section-description max-w-3xl mx-auto">
-                    We offer a range of services to ensure every aspect of your trip is seamless and enjoyable, from planning to execution.
-                </p>
-                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 animate-slide-in-section">
-                    <!-- Service Card 1: Flight Tickets -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
-                        <div class="p-6 text-center">
-                            <i class="fas fa-plane-departure text-6xl text-blue-600 mb-4"></i>
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Flight Tickets</h3>
-                            <p class="text-gray-600 mb-6">We assist with booking flights for your convenience, ensuring the best prices.</p>
-                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
-                                Inquire
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Service Card 2: Stay in Kashmir -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
-                        <div class="p-6 text-center">
-                            <i class="fas fa-hotel text-6xl text-purple-600 mb-4"></i>
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Comfortable Stay</h3>
-                            <p class="text-gray-600 mb-6">Arrangements for comfortable accommodations tailored to your preferences.</p>
-                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
-                                Inquire
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Service Card 3: Travel in Kashmir -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 group">
-                        <div class="p-6 text-center">
-                            <i class="fas fa-car-alt text-6xl text-teal-600 mb-4"></i>
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Local Travel</h3>
-                            <p class="text-gray-600 mb-6">Seamless local transportation services to explore every corner.</p>
-                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
-                                Inquire
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+		
+		
         <!-- Contact Section -->
         <section id="contact" class="bg-gray-800 text-white py-16">
             <div class="container mx-auto px-4">
                 <h2 class="text-center text-white">Get In Touch</h2>
                 <p class="text-center text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                    We're here to help plan your perfect winter holiday. Reach out to us through our contact details or connect on social media.
+                    We're here to help plan your perfect holiday. Reach out to us through our contact details or connect on social media.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <!-- Contact Info Card -->
@@ -886,20 +1004,6 @@
         </div>
     </div>
 
-    <!-- Home Discover More Modal (still present in HTML, but not triggered by a button anymore) 
-    <div id="homeDiscoverModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-button" id="closeHomeDiscoverModalBtn">&times;</button>
-            <img src="" alt="Home Discover Image">
-            <h3 class="text-3xl font-bold mb-4 text-blue-800">Your Perfect Winter Getaway Awaits!</h3>
-            <p class="text-gray-700 text-lg mb-4">
-                Immerse yourself in the enchanting beauty of Kashmir's winter wonderland. From snow-capped peaks to serene frozen lakes, every moment here promises magic and adventure.
-            </p>
-            <p class="text-gray-700 text-lg">
-                We specialize in crafting bespoke experiences, ensuring your winter holiday is filled with unforgettable memories and seamless travel.
-            </p>
-        </div>
-    </div>-->
 
     <!-- Footer Section -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -908,7 +1012,7 @@
             <div>
                 <h3 class="text-2xl font-bold text-white mb-4">Black Hawk Kashmir</h3>
                 <p class="text-gray-400 leading-relaxed mb-4">
-                    Your trusted partner for unforgettable Summer and winter journeys in the breathtaking landscapes of Kashmir.
+                    Your trusted partner for unforgettable journeys in the breathtaking landscapes of Kashmir.
                 </p>
                 <div class="flex space-x-4">
                     <a href="https://www.facebook.com/YOURFACEBOOK" target="_blank" class="text-blue-400 hover:text-blue-300 transition duration-300" aria-label="Facebook">
@@ -931,10 +1035,10 @@
                 <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
                 <ul class="space-y-2">
                     <li><a href="#home" class="hover:text-white transition duration-300">Home</a></li>
-                    <li><a href="#destination" class="hover:text-white transition duration-300">Destinations</a></li>
                     <li><a href="#packages" class="hover:text-white transition duration-300">Packages</a></li>
                     <li><a href="#hotel" class="hover:text-white transition duration-300">Black hawk Rooms</a></li>
                     <li><a href="#services" class="hover:text-white transition duration-300">Services</a></li>
+					<li><a href="#destination" class="hover:text-white transition duration-300">Destinations</a></li>
                     <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
                 </ul>
             </div>
